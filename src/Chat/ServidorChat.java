@@ -12,10 +12,10 @@ public class ServidorChat {
         try {
             Scanner sc = new Scanner(System.in);
 
-            System.out.println("Iniciando servidor de chat en el puerto 5000...");
+            System.out.println("iniciando..");
             ServerSocket serverSocket = new ServerSocket(5000);
 
-            System.out.println("Esperando a que se conecte el cliente...");
+            System.out.println("esperando a que se conecte el cliente...");
             Socket socket = serverSocket.accept();
             System.out.println("Cliente conectado.");
 
@@ -28,18 +28,18 @@ public class ServidorChat {
                 String mensajeRecibido = entrada.readLine();
 
                 if (mensajeRecibido == null || mensajeRecibido.equalsIgnoreCase("salir")) {
-                    System.out.println("El cliente ha finalizado la conversación.");
+                    System.out.println("el cliente ha finalizado la conversación.");
                     break;
                 }
 
-                System.out.println("Cliente dice: " + mensajeRecibido);
+                System.out.println("cliente dice: " + mensajeRecibido);
 
-                System.out.print("Servidor: ");
+                System.out.print("servidor: ");
                 String mensajeEnviado = sc.nextLine();
                 salida.println(mensajeEnviado);
 
                 if (mensajeEnviado.equalsIgnoreCase("salir")) {
-                    System.out.println("Has finalizado la conversación.");
+                    System.out.println("has finalizado la conversación.");
                     break;
                 }
             }
