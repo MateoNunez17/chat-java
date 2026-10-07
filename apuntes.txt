@@ -13,3 +13,14 @@ La Receta del Cliente (4 Pasos)
 2. CONECTAR TUBO --> BufferedReader (entrada) y PrintWriter (salida)
 3. BUCLE (while) --> Escribir mensaje -> Evaluar "salir" -> Leer respuesta
 4. CERRAR TODO   --> socket.close()
+
+
+
+
+Respuesta a la Pregunta Final¿Nuestro programa sabe reaccionar ante estos problemas?
+Respuesta para incluir en tu entrega:
+Sí, gracias a la implementación de bloques try-catch-finally con excepciones específicas (ConnectException y SocketException):
+El programa no colapsa de forma inesperada ni rompe el sistema operativo. Captura el fallo en tiempo de ejecución.
+Muestra al usuario un mensaje explicativo en consola sobre lo que falló en lugar de cerrar el programa abruptamente.
+Utiliza el bloque finally para garantizar la liberación de recursos, asegurando que los puertos y los sockets queden cerrados
+correctamente incluso tras ocurrir un error de red.
