@@ -1,0 +1,15 @@
+1. ABRIR PUERTA  --> ServerSocket(5000)
+2. ESPERAR       --> socket = serverSocket.accept()
+3. CONECTAR TUBO --> BufferedReader (entrada) y PrintWriter (salida)
+4. BUCLE (while) --> Leer del cliente -> Evaluar "salir" -> Responder
+5. CERRAR TODO   --> socket.close() y serverSocket.close()
+
+
+
+
+
+La Receta del Cliente (4 Pasos)
+1. LLAMAR        --> Socket("localhost", 5000)
+2. CONECTAR TUBO --> BufferedReader (entrada) y PrintWriter (salida)
+3. BUCLE (while) --> Escribir mensaje -> Evaluar "salir" -> Leer respuesta
+4. CERRAR TODO   --> socket.close()

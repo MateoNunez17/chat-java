@@ -11,9 +11,9 @@ public class ClienteChat {
         try {
             Scanner sc = new Scanner(System.in);
 
-            System.out.println("Conectando al servidor...");
+            System.out.println("conectando al servidor..");
             Socket socket = new Socket("localhost", 5000);
-            System.out.println("Conectado.");
+            System.out.println("conectado.");
 
             PrintWriter salida = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader entrada = new BufferedReader(
@@ -21,7 +21,7 @@ public class ClienteChat {
             );
 
             while (true) {
-                System.out.print("Cliente: ");
+                System.out.print("cliente: ");
                 String mensajeEnviado = sc.nextLine();
                 salida.println(mensajeEnviado);
 
@@ -30,15 +30,15 @@ public class ClienteChat {
                     break;
                 }
 
-                System.out.println("Esperando respuesta del servidor...");
+                System.out.println("esperando respuesta del servidor..");
                 String mensajeRecibido = entrada.readLine();
 
                 if (mensajeRecibido == null || mensajeRecibido.equalsIgnoreCase("salir")) {
-                    System.out.println("El servidor ha finalizado la conversación.");
+                    System.out.println("el servidor ha finalizado la conversación.");
                     break;
                 }
 
-                System.out.println("Servidor dice: " + mensajeRecibido);
+                System.out.println("servidor dice: " + mensajeRecibido);
             }
 
             sc.close();
